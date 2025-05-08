@@ -31,7 +31,7 @@ outputs:
 
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'docker://ghcr.io/metawave/action-yamllint:latest'
   args:
     - ${{ inputs.file_or_dir }}
     - ${{ inputs.config_file }}
