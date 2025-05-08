@@ -2,7 +2,7 @@ name: Build Yamllint Action Docker Image
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - 'Dockerfile'
       - 'entrypoint.sh'
