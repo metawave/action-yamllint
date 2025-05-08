@@ -4,12 +4,9 @@ set -e          # Exit immediately if a command exits with a non-zero status
 set -o pipefail # Return value of a pipeline is the value of the last command to exit with a non-zero status
 
 echo "
- __    _       _   _             __   ___    __  __ _       __ _ _           
-/ /   (_)_ __ | |_(_)_ __   __ _\ \ / / \  |  \/  | |     / _(_) | ___  ___ 
-\ \   | | '_ \| __| | '_ \ / _\` |\ V / _ \ | |\/| | |    | |_| | |/ _ \/ __|
-/ /   | | | | | |_| | | | | (_| | | / ___ \| |  | | |___ |  _| | |  __/\__ \\
-\_\   |_|_| |_|\__|_|_| |_|\__, | |/_/   \_\_|  |_|_____||_| |_|_|\___||___/
-                           |___/                                             
++------------------------+
+| Linting YAML Files...  |
++------------------------+
 "
 
 # Create a temporary log file if not specified
