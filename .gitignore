@@ -1,0 +1,15 @@
+# IDE files
+/.idea/
+/.vscode/
+
+# Temporary files
+*.tmp
+*.log
+/yamllint-*
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Node.js (if used for testing)
+/node_modules/

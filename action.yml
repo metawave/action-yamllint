@@ -1,0 +1,45 @@
+name: 'YAML Lint'
+description: 'Validate YAML file syntax and enforce formatting standards using yamllint'
+author: 'metawave'
+
+inputs:
+  file_or_dir:
+    description: 'File(s) or directory paths to lint (space separated). Default is "." which checks all YAML files recursively. Examples: "file.yaml", "file1.yaml file2.yaml", "kustomize/**/*.yaml"'
+    required: false
+  config_file:
+    description: 'Path to custom yamllint configuration file. If not specified, will use .yamllint from repository root if available'
+    required: false
+  config_data:
+    description: 'Custom configuration as YAML source (alternative to config_file). Can be single-line or multi-line YAML'
+    required: false
+  format:
+    description: 'Output format for linting results: parsable (machine-readable), standard (human-readable), colored (with ANSI colors), github (GitHub annotations), auto (adapts to environment)'
+    required: false
+    default: "parsable"
+  strict:
+    description: 'Return non-zero exit code on warnings as well as errors. Set to "true" for stricter validation'
+    required: false
+    default: "false"
+  no_warnings:
+    description: 'Output only error level problems, suppressing warnings. Set to "true" to show only errors'
+    required: false
+    default: "false"
+
+outputs:
+  logfile:
+    description: "Path to the yamllint log file containing all linting results"
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.file_or_dir }}
+    - ${{ inputs.config_file }}
+    - ${{ inputs.config_data }}
+    - ${{ inputs.format }}
+    - ${{ inputs.strict }}
+    - ${{ inputs.no_warnings }}
+
+branding:
+  color: blue
+  icon: check-square
